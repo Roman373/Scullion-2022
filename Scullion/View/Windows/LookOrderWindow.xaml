@@ -1,0 +1,80 @@
+﻿<Window x:Class="Scullion.View.Windows.LookOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Scullion.View.Windows"
+        mc:Ignorable="d"
+        Title="Формирование заказа" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="277*"></RowDefinition>
+            <RowDefinition Height="377*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Дата заказа" Style="{StaticResource TextCommon}"></TextBlock>
+                <DatePicker Name="DateOrder"></DatePicker>
+                <TextBlock Text="Дата доставки" Style="{StaticResource TextCommon}"></TextBlock>
+                <DatePicker Name="DateDelivery"></DatePicker>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Пункт выдачи" Style="{StaticResource TextCommon}"></TextBlock>
+                <ComboBox Name="CBoxPointDelviery" DisplayMemberPath="Street" SelectedValuePath="ID"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Статус" Style="{StaticResource TextCommon}"></TextBlock>
+                <ComboBox Name="CBoxStatus" DisplayMemberPath="Title" SelectedValuePath="ID"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Пользователь: " Style="{StaticResource TextCommon}"></TextBlock>
+                <TextBlock Name="TextFIO" Style="{StaticResource TextCommon}"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid Name="DataProduct" Grid.Row="1" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding ProductID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Артикул" Binding="{Binding ProductArticle}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding ProductName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Единица измерения" Binding="{Binding ProductUnit}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Стоимость" Binding="{Binding ProductCost}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Мах. скидка" Binding="{Binding ProductMaxDiscount}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Производитель" Binding="{Binding Manufacture.Title}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Поставщик" Binding="{Binding Supplier.Title}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип продукта" Binding="{Binding ProductType.Title}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Текущая скидка" Binding="{Binding ProductCurrentDiscount}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Кол-во на складе" Binding="{Binding ProductCountInStock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Описание" Binding="{Binding ProductDescription}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Изображение" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Images}" Height="100" Width="100"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="BtnDelete" Click="BtnDelete_Click" Content="Удалить" Width="175"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left">
+            <TextBlock Text="Скидка: "  Style="{StaticResource TextCommon}"></TextBlock>
+            <TextBlock Name="TextTotalDiscount"  Style="{StaticResource TextCommon}"></TextBlock>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+            <TextBlock Text="Сумма: "  Style="{StaticResource TextCommon}"></TextBlock>
+            <TextBlock Name="TextTotalCost"  Style="{StaticResource TextCommon}"></TextBlock>
+        </StackPanel>
+
+        <Button Name="BtnSaveOrder" Content="Сохранить заказ" Click="BtnSaveOrder_Click" Grid.Row="2"></Button>
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="853abdcf42614237978e9bb65c784b0d" Name="Diagram1">
+        <EntityTypeShape EntityType="user33Model.Manufacture" Width="1.5" PointX="0.75" PointY="3.875" />
+        <EntityTypeShape EntityType="user33Model.Order" Width="1.5" PointX="3" PointY="12.25" />
+        <EntityTypeShape EntityType="user33Model.OrderProduct" Width="1.5" PointX="5.25" PointY="3.5" />
+        <EntityTypeShape EntityType="user33Model.PointDelivery" Width="1.5" PointX="0.75" PointY="20" />
+        <EntityTypeShape EntityType="user33Model.Product" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="user33Model.ProductType" Width="1.5" PointX="0.75" PointY="7.125" />
+        <EntityTypeShape EntityType="user33Model.Role" Width="1.5" PointX="1.5" PointY="17.125" />
+        <EntityTypeShape EntityType="user33Model.Status" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="user33Model.Supplier" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="user33Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.25" />
+        <EntityTypeShape EntityType="user33Model.User" Width="1.5" PointX="0.75" PointY="12.5" />
+        <AssociationConnector Association="user33Model.FK_Product_Manufacture" />
+        <AssociationConnector Association="user33Model.FK__OrderProd__Order__2D27B809" />
+        <AssociationConnector Association="user33Model.FK_Order_PointDelivery" />
+        <AssociationConnector Association="user33Model.FK_Order_Status" />
+        <AssociationConnector Association="user33Model.FK_Order_User" />
+        <AssociationConnector Association="user33Model.FK__OrderProd__Produ__2E1BDC42" />
+        <AssociationConnector Association="user33Model.FK_Product_ProductType" />
+        <AssociationConnector Association="user33Model.FK_Product_Supplier" />
+        <AssociationConnector Association="user33Model.FK__User__UserRole__267ABA7A" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

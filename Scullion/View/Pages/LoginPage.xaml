@@ -1,0 +1,25 @@
+﻿<Page x:Class="Scullion.View.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Scullion.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Авторизация">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Логин" Style="{StaticResource  TextCommon}"></TextBlock>
+                <TextBox Name="TBoxLogin"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Пароль" Style="{StaticResource  TextCommon}"></TextBlock>
+                <PasswordBox Name="PBoxPassword" Width="300" Margin="0,0,5,0"></PasswordBox>
+            </StackPanel>
+            <TextBlock Text="Если войти без логина и пароля вы войдете как 'Гость'" HorizontalAlignment="Right" FontSize="12" Style="{StaticResource TextCommon}" Foreground="{StaticResource ColorAccent}"></TextBlock>
+            <Button Name="BtnLogin" Content="Войти" Click="BtnLogin_Click" HorizontalAlignment="Right"></Button>
+        </StackPanel>
+    </Grid>
+</Page>
